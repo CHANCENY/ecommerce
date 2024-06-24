@@ -1,0 +1,23 @@
+{
+  "head": [
+    "/themes/shop/assets/libs/slick-carousel/slick/slick.css",
+    "/themes/shop/assets/libs/slick-carousel/slick/slick-theme.css",
+    "/themes/shop/assets/libs/tiny-slider/dist/tiny-slider.css",
+    "/themes/shop/assets/libs/bootstrap-icons/font/bootstrap-icons.min.css",
+    "/themes/shop/assets/libs/feather-webfont/dist/feather-icons.css",
+    "/themes/shop/assets/libs/simplebar/dist/simplebar.min.css",
+    "/themes/shop/assets/css/theme.min.css"
+  ],
+  "footer": [
+    "/themes/shop/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
+    "/themes/shop/assets/libs/simplebar/dist/simplebar.min.js",
+    "/themes/shop/assets/js/theme.min.js",
+    "/themes/shop/assets/js/vendors/jquery.min.js",
+    "/themes/shop/assets/js/vendors/countdown.js",
+    "/themes/shop/assets/libs/slick-carousel/slick/slick.min.js",
+    "/themes/shop/assets/js/vendors/slick-slider.js",
+    "/themes/shop/assets/libs/tiny-slider/dist/min/tiny-slider.js",
+    "/themes/shop/assets/js/vendors/tns-slider.js",
+    "/themes/shop/assets/js/vendors/zoom.js"
+  ]
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "My shop dashboard",
+    "description": "This is shop dashboard",
+    "url": "/shop/dashboard",
+    "handler": "Mini\\Modules\\contrib\\sellers\\src\\Routes\\ShopDashboard"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667-09-655433",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Vendor Creation",
+    "description": "This is shop vendor creation",
+    "url": "/shop/vendors/create",
+    "handler": "Mini\\Modules\\contrib\\sellers\\src\\Routes\\VendorCreation"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-0976-iyg6-9987-67",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Approval Status page",
+    "description": "This is approval status page",
+    "url": "/shop/pending/approval-page",
+    "handler": "Mini\\Modules\\contrib\\sellers\\src\\Routes\\ApprovalStatusPage"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-yyir56544g-887",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Request partnership",
+    "description": "This is requesting partnership page",
+    "url": "/shop/vendors/request/partner",
+    "handler": "Mini\\Modules\\contrib\\sellers\\src\\Routes\\PartnerShipRequest"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Vendors",
+    "description": "This is requesting partnership page",
+    "url": "/shop/vendors",
+    "handler": "Mini\\Modules\\contrib\\sellers\\src\\Routes\\Vendors"
+  }
+]

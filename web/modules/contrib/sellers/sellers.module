@@ -1,0 +1,89 @@
+<?php
+
+
+use Mini\Cms\Modules\CurrentUser\CurrentUser;
+use Mini\Cms\Routing\Route;
+use Mini\Modules\contrib\sellers\src\Modals\Vendor;
+use Mini\Modules\contrib\sellers\src\Modals\VendorLicense;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+function sellers_loaded_route_alter(Route|bool &$route): void
+{
+    if($route instanceof Route) {
+
+        // Let's look for route with id a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667
+        if($route->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667') {
+
+            // Let's get current user if is allowed to do vending.
+            $current_user = new CurrentUser();
+
+            // Has this used applied for vendor creations.
+            $license = new VendorLicense();
+            $status = $license->get($current_user->id(),'owner')->getAt(0)?->approved ?? false;
+
+            // So if status is 1 mean the request was approved. if 2 then status means the request is still pending.
+            // if status is false then user has not applied yet.
+            if($status === 2) {
+
+                // Set message
+                (new \Mini\Cms\Modules\Messenger\Messenger())->addSuccessMessage("You have pending partnership request waiting for approval");
+                // let's redirect to request is under review page.
+                (new RedirectResponse('/shop/pending/approval-page'))->send();
+                exit;
+            }
+            if($status === false) {
+
+                // let's redirect to home page with status.
+                (new RedirectResponse('/shop/vendors/request/partner'))->send();
+                exit;
+            }
+
+            // If we reached this point which mean request was approved. Now lets check for vendor if existed.
+            $vendor = new Vendor();
+            $vendor_one = $vendor->get($current_user->id(), 'vendor_owner')->getAt(0)?->vendor_name ?? null;
+
+            // Checking if at least we have one vendor created for user
+            if(empty($vendor_one)) {
+                (new RedirectResponse('/shop/vendors/create'))->send();
+                exit;
+            }
+        }
+    }
+}
+
+function sellers_navigation_template_alter(string &$navigation_file): void
+{
+    $routes_to_remove_navigation =[
+        "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667",
+        "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6"
+    ];
+
+    /**@var $current_route \Mini\Cms\Controller\Route **/
+
+    $current_route = \Mini\Cms\Modules\Storage\Tempstore::load('current_route');
+
+    /**@var $loaded_route Route **/
+    $loaded_route = $current_route->getLoadedRoute();
+    if(in_array($loaded_route->getRouteId(), $routes_to_remove_navigation)) {
+        $navigation_file = 'dashboard_navigation.php';
+    }
+
+}
+
+function sellers_footer_template_alter(array &$footer): void
+{
+    $routes_to_remove_navigation =[
+        "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667",
+        "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6"
+    ];
+
+    /**@var $current_route \Mini\Cms\Controller\Route **/
+
+    $current_route = \Mini\Cms\Modules\Storage\Tempstore::load('current_route');
+
+    /**@var $loaded_route Route **/
+    $loaded_route = $current_route->getLoadedRoute();
+    if(in_array($loaded_route->getRouteId(), $routes_to_remove_navigation)) {
+        $footer['theme'] = 'dashboard_footer.php';
+    }
+}
