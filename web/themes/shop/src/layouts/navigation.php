@@ -367,11 +367,11 @@ $messages = $messages->getMessages();
                                     <li class="dropdown-submenu dropend">
                                         <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">My Account</a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="pages/account-orders.html">Orders</a></li>
-                                            <li><a class="dropdown-item" href="pages/account-settings.html">Settings</a></li>
-                                            <li><a class="dropdown-item" href="pages/account-address.html">Address</a></li>
-                                            <li><a class="dropdown-item" href="pages/account-payment-method.html">Payment Method</a></li>
-                                            <li><a class="dropdown-item" href="pages/account-notification.html">Notification</a></li>
+                                            <li><a class="dropdown-item" href="/user/account/orders">Orders</a></li>
+                                            <li><a class="dropdown-item" href="/user/account/settings">Settings</a></li>
+                                            <li><a class="dropdown-item" href="/user/account/address">Address</a></li>
+                                            <li><a class="dropdown-item" href="/user/account/payments-method">Payment Method</a></li>
+                                            <li><a class="dropdown-item" href="/user/account/notification">Notification</a></li>
                                         </ul>
                                     </li>
                                     <?php endif; ?>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "a7322f9d-3dd0-4be0g-887",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Account settings",
+    "description": "This is account settings page",
+    "url": "/user/account/settings",
+    "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountSetting"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0g-887-5956858735493866848",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Account Address settings",
+    "description": "This is account address settings page",
+    "url": "/user/account/address",
+    "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountAddress"
+  }
+]
