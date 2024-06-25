@@ -181,7 +181,7 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
                             <span class="nav-label">Store Managements</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="products.html">
+                            <a class="nav-link " href="/shop/products">
                                 <div class="d-flex align-items-center">
                                     <span class="nav-link-icon"><i class="bi bi-cart"></i></span>
                                     <span class="nav-link-text">Products</span>

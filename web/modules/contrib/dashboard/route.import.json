@@ -51,5 +51,40 @@
     "description": "This is update category",
     "url": "/shop/categories/update/status",
     "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Category"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5008454-9585.o47",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Products",
+    "description": "This is products",
+    "url": "/shop/products",
+    "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Products"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5008454-958547-9484765",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "New Product",
+    "description": "This is product form",
+    "url": "/shop/products/{new_product}",
+    "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Products"
   }
 ]

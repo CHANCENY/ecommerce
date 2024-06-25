@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94f10dfb-8858-44c2-a819-3faaa754f477" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Modal/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/categories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/new_category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/pages/account_address_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/pages/address_edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Theme/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Theme/Theme.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/customers/route.import.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/customers/route.import.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/customers/src/Modal/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/customers/src/Modal/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/customers/src/Routes/AccountAddress.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/customers/src/Routes/AccountAddress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modules/contrib/sellers/sellers.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/sellers/sellers.module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/pages/account_address.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/pages/account_address.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpTemplates">
-    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="module" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
     <include_path>
@@ -137,7 +124,8 @@
       <workItem from="1719198233468" duration="244000" />
       <workItem from="1719204535663" duration="18070000" />
       <workItem from="1719242064580" duration="8719000" />
-      <workItem from="1719289547526" duration="17926000" />
+      <workItem from="1719289547526" duration="18477000" />
+      <workItem from="1719319975952" duration="2246000" />
     </task>
     <servers />
   </component>

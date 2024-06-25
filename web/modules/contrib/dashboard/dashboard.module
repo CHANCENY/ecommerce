@@ -18,9 +18,35 @@ function dashboard_pre_assets_build(array &$assets, string $section_name, \Mini\
         if($section_name == 'footer') {
             $assets[] = "/themes/global/js/simple-datatables/simple-datatables.js";
             $assets[] = "/themes/global/js/main.js";
+            $assets[] = "/themes/shop/assets/libs/quill/dist/quill.min.js";
+            $assets[] = "/themes/shop/assets/js/vendors/editor.js";
+            $assets[] = "/themes/shop/assets/libs/dropzone/dist/min/dropzone.min.js";
+            $assets[] = "/themes/shop/assets/js/vendors/dropzone.js";
         }
         if($section_name == 'head') {
             $assets[] = "/themes/global/js/simple-datatables/style.css";
+            $assets[] = "/themes/shop/assets/libs/dropzone/dist/min/dropzone.min.css";
+        }
+    }
+
+    if($loaded->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5008454-958547-9484765') {
+        if($section_name == 'footer') {
+            $assets = array();
+            $assets[] = "/themes/shop/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js";
+            $assets[] = "/themes/shop/assets/libs/simplebar/dist/simplebar.min.js";
+            $assets[] = "/themes/shop/assets/js/theme.min.js";
+            $assets[] = "/themes/shop/assets/libs/quill/dist/quill.min.js";
+            $assets[] = "/themes/shop/assets/js/vendors/editor.js";
+            $assets[] = "/themes/shop/assets/libs/dropzone/dist/min/dropzone.min.js";
+            $assets[] = "/themes/shop/assets/js/vendors/dropzone.js";
+        }
+        if($section_name == 'head') {
+            $assets = array();
+            $assets[] = "/themes/shop/assets/libs/dropzone/dist/min/dropzone.min.css";
+            $assets[] = "/themes/shop/assets/libs/bootstrap-icons/font/bootstrap-icons.min.css";
+            $assets[] = "/themes/shop/assets/libs/feather-webfont/dist/feather-icons.css";
+            $assets[] = "/themes/shop/assets/libs/simplebar/dist/simplebar.min.css";
+            $assets[] = "/themes/shop/assets/css/theme.min.css";
         }
     }
 }
