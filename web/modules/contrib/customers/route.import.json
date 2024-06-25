@@ -34,5 +34,77 @@
     "description": "This is account address settings page",
     "url": "/user/account/address",
     "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountAddress"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0g-887-595685873549386-uiytrt-6848",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Account Address edit",
+    "description": "This is account address settings page",
+    "url": "/user/account/address/{address_edit_id}/edit",
+    "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountAddress"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0g-887-595685873549386-ui76655t-6848",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Account Address delete",
+    "description": "This is account address settings page",
+    "url": "/user/account/address/{address_delete_id}/delete",
+    "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountAddress"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0g-887-595685873549386-u57574377-6848",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Account Address default",
+    "description": "This is account address settings page",
+    "url": "/user/account/address/{address_default_id}/default",
+    "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountAddress"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0g-887-595685873549386-6743774377-6848",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Account Address view",
+    "description": "This is account address settings page",
+    "url": "/user/account/address/{address_view_id}/view",
+    "handler": "Mini\\Modules\\contrib\\customers\\src\\Routes\\AccountAddress"
   }
+
 ]

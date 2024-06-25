@@ -55,7 +55,9 @@ function sellers_navigation_template_alter(string &$navigation_file): void
 {
     $routes_to_remove_navigation =[
         "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667",
-        "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6"
+        "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6",
+        "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454",
+        "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454-95854747"
     ];
 
     /**@var $current_route \Mini\Cms\Controller\Route **/
@@ -74,7 +76,9 @@ function sellers_footer_template_alter(array &$footer): void
 {
     $routes_to_remove_navigation =[
         "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-097667",
-        "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6"
+        "a7322f9d-3dd0-4be0-8bd4-a156b--520b7-42976j-yyir56544g-887-6",
+        "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454",
+        "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454-95854747"
     ];
 
     /**@var $current_route \Mini\Cms\Controller\Route **/

@@ -54,4 +54,15 @@ class Address extends Modal
         }
         return $data;
     }
+
+    /**
+     * Removing default on owner address.
+     * @param int $address_owner
+     * @return bool
+     */
+   public function unDefaultAddress(int $address_owner): bool
+   {
+       $query = Database::database()->prepare("UPDATE $this->main_table SET is_default = 0 WHERE address_owner = :id");
+       return $query->execute(['id'=>$address_owner]);
+   }
 }

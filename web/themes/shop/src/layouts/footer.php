@@ -218,14 +218,12 @@
                         </ul>
                     </div>
                     <div class="col-6 col-sm-6 col-md-3">
-                        <h6 class="mb-4">Become a Shopper</h6>
+                        <h6 class="mb-4">Become a Shopper/Seller</h6>
                         <ul class="nav flex-column">
                             <!-- list -->
                             <li class="nav-item mb-2"><a href="#!" class="nav-link">Shopper Opportunities</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Become a Shopper</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Earnings</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Ideas & Guides</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">New Retailers</a></li>
+                            <li class="nav-item mb-2"><a href="/user/register" class="nav-link">Become a Shopper</a></li>
+                            <li class="nav-item mb-2"><a href="/shop/dashboard" class="nav-link">Become a seller</a></li>
                         </ul>
                     </div>
                     <div class="col-6 col-sm-6 col-md-3">

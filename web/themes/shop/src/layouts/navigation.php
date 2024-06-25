@@ -100,11 +100,11 @@ $messages = $messages->getMessages();
             <div class="row w-100 align-items-center gx-lg-2 gx-0">
                 <div class="col-xxl-2 col-lg-3 col-md-6 col-5">
                     <a class="navbar-brand d-none d-lg-block" href="index.html">
-                        <img src="assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template">
+                        <img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template">
                     </a>
                     <div class="d-flex justify-content-between w-100 d-lg-none">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template">
+                            <img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template">
                         </a>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ $messages = $messages->getMessages();
         <div class="container">
             <div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-default" aria-labelledby="navbar-defaultLabel">
                 <div class="offcanvas-header pb-1">
-                    <a href="index.html"><img src="assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template"></a>
+                    <a href="/"><img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template"></a>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -331,7 +331,7 @@ $messages = $messages->getMessages();
                                         </div>
                                         <div class="col-lg-3 col-12 mb-4 mb-lg-0">
                                             <div class="card border-0">
-                                                <img src="assets/images/banner/menu-banner.jpg" alt="eCommerce HTML Template" class="img-fluid">
+                                                <img src="/themes/shop/assets/images/banner/menu-banner.jpg" alt="eCommerce HTML Template" class="img-fluid">
                                                 <div class="position-absolute ps-6 mt-8">
                                                     <h5 class="mb-0">
                                                         Dont miss this

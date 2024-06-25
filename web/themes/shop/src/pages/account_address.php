@@ -122,8 +122,15 @@ $states = $content['states'] ?? null;
 
                                             <?= $address->phone_number; ?>
                                         </p>
+                                        <!-- link -->
+                                        <?php if($address->is_default === 1): ?>
+                                            <a href="/user/account/address/<?= $address->address_id; ?>/view" class="btn btn-info btn-sm">Default address</a>
+                                        <?php else: ?>
+                                            <a href="/user/account/address/<?= $address->address_id; ?>/default" class="link-primary">Set as Default</a>
+                                        <?php endif; ?>
                                         <!-- btn -->
                                         <div class="mt-4">
+                                            <a href="/user/account/address/<?= $address->address_id; ?>/edit" class="text-inherit">Edit</a>
                                             <a href="#" onclick="window.localStorage.setItem('to_delete_address',<?= $address->address_id ?>)" class="text-danger ms-3" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
                                         </div>
                                     </div>
@@ -152,24 +159,12 @@ $states = $content['states'] ?? null;
             <!-- modal body -->
             <div class="modal-body">
                 <h6>Are you sure you want to delete this address?</h6>
-                <p class="mb-6">
-                    Jitu Chauhan
-                    <br>
-
-                    4450 North Avenue Oakland,
-                    <br>
-
-                    Nebraska, United States,
-                    <br>
-
-                    402-776-1106
-                </p>
             </div>
             <!-- modal footer -->
             <div class="modal-footer">
                 <!-- btn -->
                 <button type="button" class="btn btn-outline-gray-400" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" id="deleteAddress" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
@@ -300,5 +295,16 @@ $states = $content['states'] ?? null;
             </ul>
         </div>
     </div>
+</div>
+
+<div>
+    <script>
+        const deleteBtn = document.getElementById('deleteAddress');
+        if(deleteBtn) {
+            deleteBtn.addEventListener('click', (e)=>{
+                window.location.href = '/user/account/address/' + localStorage.getItem('to_delete_address') + '/delete';
+            })
+        }
+    </script>
 </div>
 

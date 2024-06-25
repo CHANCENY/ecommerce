@@ -161,6 +161,8 @@ class Theme
 
     public function writeAssets(string $assets_section): ?string
     {
+        $current_route = Tempstore::load('current_route');
+        Extensions::runHooks('_pre_assets_build',[&$this->assets[$assets_section], $assets_section, $current_route]);
         return $this->buildAssets($this->assets[$assets_section] ?? []);
     }
 

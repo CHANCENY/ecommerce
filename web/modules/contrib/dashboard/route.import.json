@@ -1,0 +1,55 @@
+[
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Categories",
+    "description": "This is requesting partnership page",
+    "url": "/shop/categories",
+    "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Category"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454-95854747",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "New Category",
+    "description": "This is adding new category",
+    "url": "/shop/categories/{category_new}",
+    "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Category"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn50000858454-95854747",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Update Category",
+    "description": "This is update category",
+    "url": "/shop/categories/update/status",
+    "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Category"
+  }
+]

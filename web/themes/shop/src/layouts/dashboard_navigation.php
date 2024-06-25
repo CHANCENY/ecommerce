@@ -189,7 +189,7 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="categories.html">
+                            <a class="nav-link " href="/shop/categories">
                                 <div class="d-flex align-items-center">
                                     <span class="nav-link-icon"><i class="bi bi-list-task"></i></span>
                                     <span class="nav-link-text">Categories</span>
