@@ -28,16 +28,12 @@
                 <div class="card h-100 card-lg">
                     <div class="px-6 py-6">
                         <div class="row justify-content-between">
-                            <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
-
-                            </div>
+<!--                            <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">-->
+<!---->
+<!--                            </div>-->
                             <!-- select option -->
                             <div class="col-xl-2 col-md-4 col-12">
-                                <select id="actions" class="form-select">
-                                    <option selected="">Status</option>
-                                    <option value="1">Published</option>
-                                    <option value="0">Unpublished</option>
-                                </select>
+                               <button id="actions" class="btn-primary btn">Save changes</button>
                             </div>
                         </div>
                     </div>
@@ -66,7 +62,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check">
-                                            <input class="form-check-input check-class" type="checkbox" cate="<?= $category->category_id ?>" id="category<?= $category->category_id ?>">
+                                            <input <?php echo $category->category_status == 1 ? 'checked' : null; ?> class="form-check-input check-class" type="checkbox" cate="<?= $category->category_id ?>" id="category<?= $category->category_id ?>">
                                             <label class="form-check-label" for="category<?= $category->category_id ?>"></label>
                                         </div>
                                     </td>
@@ -97,20 +93,20 @@
 <script>
     const actions = document.getElementById('actions');
     if(actions) {
-        actions.addEventListener('change',(e)=>{
-            const status = e.target.value;
+        actions.addEventListener('click',(e)=>{
+            e.preventDefault();
             const checkboxes = document.getElementsByClassName('check-class');
             if(checkboxes) {
                 const statues = [];
                 Array.from(checkboxes).forEach((item)=>{
                     if(item.checked) {
-                        const d = {cate_id: item.getAttribute('cate'), status: status}
+                        const d = {cate_id: item.getAttribute('cate'), status: 1}
+                        statues.push(d);
+                    }else {
+                        const d = {cate_id: item.getAttribute('cate'), status: 0}
                         statues.push(d);
                     }
-                    else {
-                        const d = {cate_id: item.getAttribute('cate'), status: false}
-                        statues.push(d);
-                    }
+
                 })
                 if(statues) {
                     const xhr = new XMLHttpRequest();
@@ -118,7 +114,7 @@
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.onload = function () {
                         if(this.status === 200) {
-                            console.log(this.responseText);
+                            window.location.reload();
                         }
                     }
                     xhr.send(JSON.stringify(statues))

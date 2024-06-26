@@ -6,7 +6,9 @@ use Mini\Cms\Controller\ContentType;
 use Mini\Cms\Controller\ControllerInterface;
 use Mini\Cms\Controller\Request;
 use Mini\Cms\Controller\Response;
+use Mini\Cms\Modules\CurrentUser\CurrentUser;
 use Mini\Cms\Services\Services;
+use Mini\Modules\contrib\sellers\src\Modals\Vendor;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class Category implements ControllerInterface
@@ -27,24 +29,29 @@ class Category implements ControllerInterface
     public function writeBody(): void
     {
         $category_modal = new \Mini\Modules\contrib\dashboard\src\Modal\Category();
-        if($this->request->isMethod('POST')) {
+        if($this->request->query->has('category_new')) {
+
+            $vendor_modal = new Vendor();
+            $vendors = $vendor_modal->get((new CurrentUser())->id(), 'vendor_owner')->getRecords();
+            $this->newCategory();
+            $this->response->write(Services::create('render')->render('new_category.php',['vendors' => $vendors]));
+            return;
+        }
+        if($this->request->isMethod('POST') && $this->request->headers->get('Content-Type') === 'application/json') {
             $data = json_decode($this->request->getContent(),true);
             if(!empty($data)) {
+                $flags = [];
                 foreach($data as $name => $value) {
-                    $category_modal->update(['category_status' => $value['status']], $value['cate_id']);
+                    if($category_modal->update(['category_status' => $value['status']], $value['cate_id'])) {
+                        $flags[] = true;
+                    }
                 }
-                $this->response->write(['status' => TRUE]);
+                $this->response->write(['status' => in_array(true, $flags), 'd'=>$data]);
             }
             else {
                 $this->response->write(['status' => FALSE]);
             }
             $this->response->setContentType(ContentType::APPLICATION_JSON);
-            return;
-        }
-        if($this->request->query->has('category_new')) {
-
-            $this->newCategory();
-            $this->response->write(Services::create('render')->render('new_category.php'));
             return;
         }
         $categories = $category_modal->all()->getRecords();

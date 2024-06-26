@@ -2,12 +2,14 @@
 
 namespace Mini\Modules\contrib\sellers\src\Modals;
 
+use Mini\Cms\Modules\FileSystem\File;
 use Mini\Cms\Modules\Modal\ColumnClassNotFound;
 use Mini\Cms\Modules\Modal\Columns\Number;
 use Mini\Cms\Modules\Modal\Columns\Text;
 use Mini\Cms\Modules\Modal\Columns\VarChar;
 use Mini\Cms\Modules\Modal\Modal;
 use Mini\Cms\Modules\Modal\PrimaryKeyColumnMissing;
+use Mini\Modules\contrib\products\src\Modal\ProductModal;
 
 /**
  * @class Vendor is modal for seller storage.
@@ -42,5 +44,18 @@ class Vendor extends Modal
 
         // Running parent construct..
         parent::__construct();
+    }
+
+    public static function vendorLogo(int $logo_id): string
+    {
+        $file = File::load($logo_id);
+        return '/'. $file->getFilePath(true);
+    }
+
+    public static function vendorProductCount(int $vendor_id): string
+    {
+        $product_modal = new ProductModal();
+        $products = $product_modal->get($vendor_id,'product_vendor')->getRecords();
+        return count($products);
     }
 }

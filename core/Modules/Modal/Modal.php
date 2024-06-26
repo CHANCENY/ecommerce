@@ -222,12 +222,15 @@ abstract class Modal
         if(!empty($this->columns)) {
             foreach($this->columns as $column) {
                 if($column instanceof ColumnInterface) {
-                    if(!empty($values[$column->getName()])) {
-                        $processed[$column->getName()] = $values[$column->getName()];
+                    if(isset($values[$column->getName()])) {
+                        if(!empty($values[$column->getName()]) || is_numeric($values[$column->getName()])) {
+                            $processed[$column->getName()] = $values[$column->getName()];
+                        }
                     }
                 }
             }
         }
+
         if(!empty($processed)) {
             $columns = array_keys($processed);
             $placeholders = array_map(function($column) {return "$column = :$column"; },$columns);
@@ -241,6 +244,7 @@ abstract class Modal
             return $this->get($key);
         }
 
+        print_r($processed);
         return false;
     }
 

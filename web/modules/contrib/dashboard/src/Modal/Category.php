@@ -28,10 +28,10 @@ class Category extends Modal
             "category_name",
             "category_slug",
             "category_parent",
-            "category_date",
             "category_description",
             "category_status",
-            "category_image"
+            "category_image",
+            'category_vendor'
         );
 
         foreach ($list as $name) {

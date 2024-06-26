@@ -48,19 +48,22 @@
                             </div>
                             <!-- input -->
                             <div class="mb-3 col-lg-6">
+                                <label class="form-label">Category vendor</label>
+                                <select required name="category_vendor" type="text" class="form-control" >
+                                    <?php if(!empty($content['vendors'])): foreach ($content['vendors'] as $vendor): ?>
+                                      <option value="<?= $vendor->vendor_id; ?>"><?= $vendor->vendor_name; ?></option>
+                                    <?php endforeach; endif; ?>
+                                </select>
+                            </div>
+                            <div class="mb-3 col-lg-6">
                                 <label class="form-label">Parent Category</label>
-                                <select name="category_parent" class="form-select">
+                                <select required name="category_parent" class="form-select">
                                     <option selected="">Category Name</option>
                                     <option value="Dairy, Bread & Eggs">Dairy, Bread & Eggs</option>
                                     <option value="Snacks & Munchies">Snacks & Munchies</option>
                                     <option value="Fruits & Vegetables">Fruits & Vegetables</option>
                                 </select>
                             </div>
-                            <div class="mb-3 col-lg-6">
-                                <label class="form-label">Date</label>
-                                <input name="category_date" type="text" class="form-control flatpickr" placeholder="Select Date">
-                            </div>
-
                             <div></div>
                             <!-- input -->
                             <div class="mb-3 col-lg-12">

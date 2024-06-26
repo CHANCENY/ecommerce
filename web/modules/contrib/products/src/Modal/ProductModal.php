@@ -36,6 +36,7 @@ class ProductModal extends Modal
             self::buildColumnInstance(Number::class)->parent($this)->name('product_image')->size(11),
             self::buildColumnInstance(Text::class)->parent($this)->name('product_description'),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_in_stock')->size(11),
+            self::buildColumnInstance(Number::class)->parent($this)->name('product_vendor')->size(11),
         );
         parent::__construct();
     }

@@ -139,6 +139,31 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- card -->
+                <div class="card mb-6 card-lg">
+                    <!-- card body -->
+                    <div class="card-body p-6">
+                        <h4 class="mb-4 h5">Meta Data</h4>
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">Product Vendor</label>
+                            <select name="product_vendor" class="form-control">
+                                <?php $flag = false; if(!empty($content['vendors'])): foreach ($content['vendors'] as $vendor): ?>
+                                  <?php if($vendor instanceof \Mini\Cms\Modules\Modal\RecordCollection): ?>
+                                    <?php if($flag === false): ?>
+                                    <option selected value="<?= $vendor->vendor_id; ?>"><?= $vendor->vendor_name; ?></option>
+                                        <?php $flag = true; ?>
+                                      <?php else: ?>
+                                            <option value="<?= $vendor->vendor_id; ?>"><?= $vendor->vendor_name; ?></option>
+                                      <?php endif; ?>
+                                  <?php endif; ?>
+                                <?php endforeach; endif; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- button -->
                 <div class="d-grid">
                     <input name="new_product" type="submit" class="btn btn-primary" value="Create Product">
