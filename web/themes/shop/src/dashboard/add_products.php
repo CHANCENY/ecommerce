@@ -25,7 +25,7 @@
             </div>
         </div>
         <!-- row -->
-        <div class="row">
+        <form method="post" enctype="multipart/form-data" class="row">
             <div class="col-lg-8 col-12">
                 <!-- card -->
                 <div class="card mb-6 card-lg">
@@ -36,12 +36,12 @@
                             <!-- input -->
                             <div class="mb-3 col-lg-6">
                                 <label class="form-label">Title</label>
-                                <input type="text" class="form-control" placeholder="Product Name" required="">
+                                <input name="product_name" type="text" class="form-control" placeholder="Product Name" required="">
                             </div>
                             <!-- input -->
                             <div class="mb-3 col-lg-6">
                                 <label class="form-label">Product Category</label>
-                                <select class="form-select">
+                                <select name="product_category" class="form-select">
                                     <option selected="">Product Category</option>
                                     <option value="Dairy, Bread & Eggs">Dairy, Bread & Eggs</option>
                                     <option value="Snacks & Munchies">Snacks & Munchies</option>
@@ -51,12 +51,12 @@
                             <!-- input -->
                             <div class="mb-3 col-lg-6">
                                 <label class="form-label">Weight</label>
-                                <input type="text" class="form-control" placeholder="Weight" required="">
+                                <input name="product_weight" type="text" class="form-control" placeholder="Weight" required="">
                             </div>
                             <!-- input -->
                             <div class="mb-3 col-lg-6">
                                 <label class="form-label">Units</label>
-                                <select class="form-select">
+                                <select name="product_unit" class="form-select">
                                     <option selected="">Select Units</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -69,7 +69,9 @@
                                     <h4 class="mb-3 h5">Product Images</h4>
 
                                     <!-- input -->
-                                    <div id="my-dropzone" class="dropzone mt-4 border-dashed rounded-2 min-h-0"></div>
+                                    <div class="mt-4 border-dashed rounded-2 min-h-0">
+                                        <input type="file" name="product_image[]" class="form-control" multiple min="1" max="4">
+                                    </div>
                                 </div>
                             </div>
                             <!-- input -->
@@ -88,31 +90,31 @@
                     <div class="card-body p-6">
                         <!-- input -->
                         <div class="form-check form-switch mb-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchStock" checked="">
+                            <input name="product_in_stock" value="1" class="form-check-input" type="checkbox" role="switch" id="flexSwitchStock" checked="">
                             <label class="form-check-label" for="flexSwitchStock">In Stock</label>
                         </div>
                         <!-- input -->
                         <div>
                             <div class="mb-3">
                                 <label class="form-label">Product Code</label>
-                                <input type="text" class="form-control" placeholder="Enter Product Title">
+                                <input name="product_code" type="text" class="form-control" placeholder="Enter Product code">
                             </div>
                             <!-- input -->
                             <div class="mb-3">
                                 <label class="form-label">Product SKU</label>
-                                <input type="text" class="form-control" placeholder="Enter Product Title">
+                                <input name="product_sku" type="text" class="form-control" placeholder="Enter Product SKU">
                             </div>
                             <!-- input -->
                             <div class="mb-3">
                                 <label class="form-label" id="productSKU">Status</label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="">
+                                    <input class="form-check-input" type="radio" name="product_status" id="inlineRadio1" value="1" checked="">
                                     <label class="form-check-label" for="inlineRadio1">Active</label>
                                 </div>
                                 <!-- input -->
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="product_status" id="inlineRadio2" value="0">
                                     <label class="form-check-label" for="inlineRadio2">Disabled</label>
                                 </div>
                                 <!-- input -->
@@ -128,38 +130,20 @@
                         <!-- input -->
                         <div class="mb-3">
                             <label class="form-label">Regular Price</label>
-                            <input type="text" class="form-control" placeholder="$0.00">
+                            <input type="text" name="product_normal_price" class="form-control" placeholder="$0.00">
                         </div>
                         <!-- input -->
                         <div class="mb-3">
                             <label class="form-label">Sale Price</label>
-                            <input type="text" class="form-control" placeholder="$0.00">
-                        </div>
-                    </div>
-                </div>
-                <!-- card -->
-                <div class="card mb-6 card-lg">
-                    <!-- card body -->
-                    <div class="card-body p-6">
-                        <h4 class="mb-4 h5">Meta Data</h4>
-                        <!-- input -->
-                        <div class="mb-3">
-                            <label class="form-label">Meta Title</label>
-                            <input type="text" class="form-control" placeholder="Title">
-                        </div>
-
-                        <!-- input -->
-                        <div class="mb-3">
-                            <label class="form-label">Meta Description</label>
-                            <textarea class="form-control" rows="3" placeholder="Meta Description"></textarea>
+                            <input type="text" class="form-control" name="product_discount_price" placeholder="$0.00">
                         </div>
                     </div>
                 </div>
                 <!-- button -->
                 <div class="d-grid">
-                    <a href="#" class="btn btn-primary">Create Product</a>
+                    <input name="new_product" type="submit" class="btn btn-primary" value="Create Product">
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </main>

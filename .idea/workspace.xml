@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94f10dfb-8858-44c2-a819-3faaa754f477" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductImageModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/sellers/sellers.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/sellers/sellers.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php83" />
@@ -85,8 +83,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.18034.69" />
-        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.18034.69" />
+        <option value="bundled-js-predefined-d6986cc7102b-19b454f630c8-JavaScript-PS-242.16677.23" />
+        <option value="bundled-php-predefined-a98d8de5180a-22e5edc3f707-com.jetbrains.php.sharedIndexes-PS-242.16677.23" />
       </set>
     </attachedChunks>
   </component>
@@ -126,6 +124,7 @@
       <workItem from="1719242064580" duration="8719000" />
       <workItem from="1719289547526" duration="18477000" />
       <workItem from="1719319975952" duration="2246000" />
+      <workItem from="1719329166630" duration="6374000" />
     </task>
     <servers />
   </component>
