@@ -25,4 +25,6 @@ class ProductImageModal extends Modal
         );
         parent::__construct();
     }
+
+
 }

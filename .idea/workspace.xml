@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94f10dfb-8858-44c2-a819-3faaa754f477" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductImageModal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductImageModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductImageModal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/vendor_grid.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/vendor_grid.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,10 +128,23 @@
       <workItem from="1719289547526" duration="18477000" />
       <workItem from="1719319975952" duration="2246000" />
       <workItem from="1719329166630" duration="6374000" />
+      <workItem from="1719401678731" duration="9108000" />
+      <workItem from="1719416395067" duration="8131000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php</url>
+          <line>100</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -28,6 +28,7 @@ class ProductModal extends Modal
             self::buildColumnInstance(VarChar::class)->parent($this)->size(255)->name('product_name')->nullable(false),
             self::buildColumnInstance(VarChar::class)->parent($this)->size(255)->name('product_weight'),
             self::buildColumnInstance(VarChar::class)->parent($this)->name('product_code')->size(25),
+            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_category')->size(25),
             self::buildColumnInstance(VarChar::class)->parent($this)->name('product_sku')->size(25),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_unit')->size(11),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_status')->size(11),
@@ -37,6 +38,7 @@ class ProductModal extends Modal
             self::buildColumnInstance(Text::class)->parent($this)->name('product_description'),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_in_stock')->size(11),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_vendor')->size(11),
+            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_sizes')->size(255),
         );
         parent::__construct();
     }

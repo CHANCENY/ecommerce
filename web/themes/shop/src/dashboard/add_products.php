@@ -40,12 +40,14 @@
                             </div>
                             <!-- input -->
                             <div class="mb-3 col-lg-6">
-                                <label class="form-label">Product Category</label>
-                                <select name="product_category" class="form-select">
-                                    <option selected="">Product Category</option>
-                                    <option value="Dairy, Bread & Eggs">Dairy, Bread & Eggs</option>
-                                    <option value="Snacks & Munchies">Snacks & Munchies</option>
-                                    <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                                <label class="form-label">Product Sizes</label>
+                                <select name="product_sizes" class="form-select">
+                                    <option selected="">Product Sizes</option>
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
+                                    <option value="xlarge">X-Large</option>
+                                    <option value="xxlarge">XX-Large</option>
                                 </select>
                             </div>
                             <!-- input -->
@@ -61,6 +63,13 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
                                 </select>
                             </div>
                             <div>
@@ -148,7 +157,7 @@
                         <!-- input -->
                         <div class="mb-3">
                             <label class="form-label">Product Vendor</label>
-                            <select name="product_vendor" class="form-control">
+                            <select id="product_vendor" name="product_vendor" class="form-control">
                                 <?php $flag = false; if(!empty($content['vendors'])): foreach ($content['vendors'] as $vendor): ?>
                                   <?php if($vendor instanceof \Mini\Cms\Modules\Modal\RecordCollection): ?>
                                     <?php if($flag === false): ?>
@@ -159,6 +168,14 @@
                                       <?php endif; ?>
                                   <?php endif; ?>
                                 <?php endforeach; endif; ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Product Category</label>
+                            <select id="product_category" name="product_category" class="form-control">
+                                <?php if(!empty($content['categories'])): foreach ($content['categories'] as $category): ?>
+                                   <option value="<?= $category['category_id'];  ?>"><?= $category['category_name']; ?></option>
+                                <?php endforeach; endif;  ?>
                             </select>
                         </div>
                     </div>
@@ -172,3 +189,35 @@
         </form>
     </div>
 </main>
+<script>
+    const product_vendor = document.getElementById('product_vendor');
+    if(product_vendor) {
+        product_vendor.addEventListener('change',(e)=>{
+            const vendor_id = e.target.value;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/shop/products/new',true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function () {
+                if(this.status === 200) {
+                    const cate = document.getElementById('product_category');
+                    cate.innerHTML = '';
+                    if(cate) {
+                        try{
+                            const data = JSON.parse(this.responseText);
+                            data.forEach((item)=>{
+                                const op = document.createElement('option');
+                                op.value = item.category_id;
+                                op.textContent = item.category_name;
+                                cate.appendChild(op);
+                                cate.removeAttribute('readonly');
+                            });
+                        }catch (e) {
+                            console.log(this.responseText)
+                        }
+                    }
+                }
+            }
+            xhr.send(JSON.stringify({vendor_id}));
+        });
+    }
+</script>
