@@ -26,19 +26,19 @@ class ProductModal extends Modal
         $this->columns = array(
             self::buildColumnInstance(Number::class)->parent($this)->name('product_id')->autoIncrement(true)->primary(true)->size(11),
             self::buildColumnInstance(VarChar::class)->parent($this)->size(255)->name('product_name')->nullable(false),
-            self::buildColumnInstance(VarChar::class)->parent($this)->size(255)->name('product_weight'),
-            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_code')->size(25),
+            self::buildColumnInstance(VarChar::class)->parent($this)->size(255)->name('product_weight')->nullable(true),
+            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_code')->size(25)->nullable(true),
             self::buildColumnInstance(VarChar::class)->parent($this)->name('product_category')->size(25),
-            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_sku')->size(25),
-            self::buildColumnInstance(Number::class)->parent($this)->name('product_unit')->size(11),
-            self::buildColumnInstance(Number::class)->parent($this)->name('product_status')->size(11),
+            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_sku')->size(25)->nullable(true),
+            self::buildColumnInstance(Number::class)->parent($this)->name('product_unit')->size(11)->setAsDefined(1),
+            self::buildColumnInstance(Number::class)->parent($this)->name('product_status')->size(11)->setAsDefined(0),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_normal_price')->size(11),
-            self::buildColumnInstance(Number::class)->parent($this)->name('product_discount_price')->size(11),
+            self::buildColumnInstance(Number::class)->parent($this)->name('product_discount_price')->size(11)->setAsDefined(0),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_image')->size(11),
             self::buildColumnInstance(Text::class)->parent($this)->name('product_description'),
-            self::buildColumnInstance(Number::class)->parent($this)->name('product_in_stock')->size(11),
+            self::buildColumnInstance(Number::class)->parent($this)->name('product_in_stock')->size(11)->setAsDefined(0),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_vendor')->size(11),
-            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_sizes')->size(255),
+            self::buildColumnInstance(VarChar::class)->parent($this)->name('product_sizes')->size(255)->nullable(true),
         );
         parent::__construct();
     }

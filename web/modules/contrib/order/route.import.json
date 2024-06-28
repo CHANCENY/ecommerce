@@ -1,0 +1,19 @@
+[
+  {
+    "id": "a7322f9d-56b520b7-42976j-099580-588765-43454",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Orders",
+    "description": "This is orders page",
+    "url": "/shop/orders",
+    "handler": "Mini\\Modules\\contrib\\order\\src\\Routes\\Orders"
+  }
+]

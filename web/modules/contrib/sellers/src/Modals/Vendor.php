@@ -49,7 +49,7 @@ class Vendor extends Modal
     public static function vendorLogo(int $logo_id): string
     {
         $file = File::load($logo_id);
-        return '/'. $file->getFilePath(true);
+        return '/'. $file?->getFilePath(true);
     }
 
     public static function vendorProductCount(int $vendor_id): string

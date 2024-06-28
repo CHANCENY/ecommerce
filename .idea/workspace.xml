@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94f10dfb-8858-44c2-a819-3faaa754f477" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/route.import.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderItemModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Plugin/OrderHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Routes/Orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/dashboard_orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductImageModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductImageModal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Modules/FileSystem/FileSystem.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Modules/FileSystem/FileSystem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/controllers/Sample.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/Sample.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/add_products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/vendor_grid.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/vendor_grid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/sellers/src/Modals/Vendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/sellers/src/Modals/Vendor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +134,10 @@
       <workItem from="1719329166630" duration="6374000" />
       <workItem from="1719401678731" duration="9108000" />
       <workItem from="1719416395067" duration="8131000" />
+      <workItem from="1719476349410" duration="1737000" />
+      <workItem from="1719496804208" duration="2116000" />
+      <workItem from="1719503046978" duration="9781000" />
+      <workItem from="1719545435623" duration="1202000" />
     </task>
     <servers />
   </component>
@@ -141,7 +149,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php</url>
-          <line>100</line>
+          <line>112</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

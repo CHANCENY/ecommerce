@@ -206,7 +206,7 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
                             <div id="navCategoriesOrders" class="collapse " data-bs-parent="#sideNavbar">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link " href="order-list.html">List</a>
+                                        <a class="nav-link " href="/shop/orders">List</a>
                                     </li>
                                     <!-- Nav item -->
                                     <li class="nav-item">

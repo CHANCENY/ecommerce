@@ -30,10 +30,22 @@ class Products
     public function newProduct(array $product): bool
     {
         $common_id = time();
-        foreach ($product as $key=>$item) {
-            if(empty($item)) {
-                (new Messenger())->addErrorMessage("Error: field empty note all fields are required");
-                return false;
+        foreach ($product as $key=>&$item) {
+
+            if($key === 'product_vendor' && empty($item)) {
+                throw new \Exception('Vendor can not be empty');
+            }
+            if($key === 'product_description' && empty($item)) {
+                throw new \Exception('Description can not be empty');
+            }
+            if($key === 'product_image' && empty($item)) {
+                throw new \Exception("Products image is empty");
+            }
+            if($key === 'product_normal_price' && empty($item)) {
+                throw new \Exception("Product need price");
+            }
+            if($key === 'product_category' && empty($item)) {
+                throw new \Exception("Product is needed");
             }
         }
         $images = explode(',', gettype( $product['product_image']) == 'array' ? implode(',', $product['product_image']) :  $product['product_image']);

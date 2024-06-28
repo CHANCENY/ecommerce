@@ -7,6 +7,8 @@ use Mini\Cms\Controller\ControllerInterface;
 use Mini\Cms\Controller\Request;
 use Mini\Cms\Controller\Response;
 use Mini\Cms\Controller\StatusCode;
+use Mini\Modules\contrib\order\src\Modal\OrderModal;
+use Mini\Modules\contrib\order\src\Plugin\OrderHandler;
 
 class Sample implements ControllerInterface
 {
@@ -25,8 +27,38 @@ class Sample implements ControllerInterface
 
     public function writeBody(): void
     {
-        $this->response->setStatusCode(StatusCode::OK)
-            ->setContentType(ContentType::TEXT_HTML)
-            ->write("<h1>Hello World!</h1>");
+        $order_items = array(
+            [
+                'vendor_id' => 6,
+                'product_id' => 1,
+                'product_name'=>'Mango Juice',
+                'product_quantity' => 2,
+                'product_size' => 'large',
+                'product_weight'=> null,
+            ],
+            [
+            'vendor_id' => 6,
+            'product_id' => 2,
+            'product_quantity' => 2,
+            'product_size' => 'large',
+            'product_weight'=> null,
+            ],
+            [
+                'vendor_id' => 6,
+                'product_id' => 2,
+                'product_quantity' => 2,
+                'product_size' => 'large',
+                'product_weight'=> null,
+            ]
+        );
+
+        try {
+            $ordr_handler = new OrderHandler();
+            $ordr_handler->addNewOrder($order_items, 1);
+        }catch (\Throwable $e) {
+            $this->response->write($e->getMessage());
+        }
+
+
     }
 }
