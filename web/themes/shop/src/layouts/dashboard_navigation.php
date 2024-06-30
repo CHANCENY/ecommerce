@@ -163,7 +163,7 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
         <nav class="navbar-vertical-nav d-none d-xl-block">
             <div class="navbar-vertical">
                 <div class="px-4 py-5">
-                    <a href="/shop/dashboard" class="navbar-brand">
+                    <a href="/" class="navbar-brand">
                         <img src="<?= $logo; ?>" alt="">
                     </a>
                 </div>
@@ -208,10 +208,6 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
                                     <li class="nav-item">
                                         <a class="nav-link " href="/shop/orders">List</a>
                                     </li>
-                                    <!-- Nav item -->
-                                    <li class="nav-item">
-                                        <a class="nav-link " href="order-single.html">Single</a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -225,7 +221,7 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="customers.html">
+                            <a class="nav-link " href="/shop/customers">
                                 <div class="d-flex align-items-center">
                                     <span class="nav-link-icon"><i class="bi bi-people"></i></span>
                                     <span class="nav-link-text">Customers</span>
@@ -233,62 +229,12 @@ $user_profile = '/'. (new \Mini\Cms\Modules\Streams\MiniWrapper())->getRealPath(
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="reviews.html">
+                            <a class="nav-link " href="/shop/reviews">
                                 <div class="d-flex align-items-center">
                                     <span class="nav-link-icon"><i class="bi bi-star"></i></span>
                                     <span class="nav-link-text">Reviews</span>
                                 </div>
                             </a>
-                        </li>
-                        <!-- Nav item -->
-                        <li class="nav-item">
-                            <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#navMenuLevelFirst" aria-expanded="false" aria-controls="navMenuLevelFirst">
-                                <span class="nav-link-icon"><i class="bi bi-arrow-90deg-down"></i></span>
-                                <span class="nav-link-text">Menu Level</span>
-                            </a>
-                            <div id="navMenuLevelFirst" class="collapse " data-bs-parent="#sideNavbar">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#navMenuLevelSecond1" aria-expanded="false" aria-controls="navMenuLevelSecond1">
-                                            Two Level
-                                        </a>
-                                        <div id="navMenuLevelSecond1" class="collapse" data-bs-parent="#navMenuLevel">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a class="nav-link " href="#">NavItem 1</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link " href="#">NavItem 2</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#navMenuLevelThreeOne1" aria-expanded="false" aria-controls="navMenuLevelThreeOne1">
-                                            Three Level
-                                        </a>
-                                        <div id="navMenuLevelThreeOne1" class="collapse " data-bs-parent="#navMenuLevel">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#navMenuLevelThreeTwo" aria-expanded="false" aria-controls="navMenuLevelThreeTwo">
-                                                        NavItem 1
-                                                    </a>
-                                                    <div id="navMenuLevelThreeTwo" class="collapse collapse " data-bs-parent="#navMenuLevelThree">
-                                                        <ul class="nav flex-column">
-                                                            <li class="nav-item">
-                                                                <a class="nav-link " href="#">NavChild Item 1</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link " href="#">Nav Item 2</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
 
                         <li class="nav-item mt-6 mb-3">

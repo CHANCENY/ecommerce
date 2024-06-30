@@ -14,7 +14,11 @@ function dashboard_pre_assets_build(array &$assets, string $section_name, \Mini\
 {
     /**@var $loaded Route **/
     $loaded = $current_route->getLoadedRoute();
-    if($loaded->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454' || $loaded->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5008454-9585.o47') {
+    if($loaded->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5858454' ||
+        $loaded->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42976j-nn5008454-9585.o47' ||
+       $loaded->getRouteId() === 'a7322f9d-56b520b7-42976j-099580-588765-43454' ||
+       $loaded->getRouteId() === 'a7322f9d-3dd0-54653223-7705040-454-958547-9484765' ||
+       $loaded->getRouteId() === 'a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-098433-3467833') {
         if($section_name == 'footer') {
             $assets[] = "/themes/global/js/simple-datatables/simple-datatables.js";
             $assets[] = "/themes/global/js/main.js";

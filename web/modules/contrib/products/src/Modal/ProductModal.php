@@ -33,7 +33,7 @@ class ProductModal extends Modal
             self::buildColumnInstance(Number::class)->parent($this)->name('product_unit')->size(11)->setAsDefined(1),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_status')->size(11)->setAsDefined(0),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_normal_price')->size(11),
-            self::buildColumnInstance(Number::class)->parent($this)->name('product_discount_price')->size(11)->setAsDefined(0),
+            self::buildColumnInstance(Number::class)->parent($this)->name('product_discount_price')->size(11)->nullable(true)->setAsDefined(0),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_image')->size(11),
             self::buildColumnInstance(Text::class)->parent($this)->name('product_description'),
             self::buildColumnInstance(Number::class)->parent($this)->name('product_in_stock')->size(11)->setAsDefined(0),

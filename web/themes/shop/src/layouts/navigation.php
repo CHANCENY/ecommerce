@@ -100,11 +100,11 @@ $messages = $messages->getMessages();
             <div class="row w-100 align-items-center gx-lg-2 gx-0">
                 <div class="col-xxl-2 col-lg-3 col-md-6 col-5">
                     <a class="navbar-brand d-none d-lg-block" href="index.html">
-                        <img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template">
+                        <img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="">
                     </a>
                     <div class="d-flex justify-content-between w-100 d-lg-none">
                         <a class="navbar-brand" href="index.html">
-                            <img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="eCommerce HTML Template">
+                            <img src="/themes/shop/assets/images/logo/freshcart-logo.svg" alt="">
                         </a>
                     </div>
                 </div>
@@ -221,15 +221,13 @@ $messages = $messages->getMessages();
                         </a>
                         <div class="collapse mt-2" id="collapseExample">
                             <div class="card card-body">
+                                <?php if(!empty($parent_categories)): ?>
                                 <ul class="mb-0 list-unstyled">
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Dairy, Bread & Eggs</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Snacks & Munchies</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Fruits & Vegetables</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Cold Drinks & Juices</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Breakfast & Instant Food</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Bakery & Biscuits</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Chicken, Meat & Fish</a></li>
+                                    <?php foreach ($parent_categories as $parent_category): ?>
+                                    <li><a class="dropdown-item" href="/shopping/products/<?= $parent_category->category_parent; ?>"><?= $parent_category->category_parent; ?></a></li>
+                                    <?php endforeach; ?>
                                 </ul>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -245,90 +243,38 @@ $messages = $messages->getMessages();
 							</span>
                             All Departments
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Dairy, Bread & Eggs</a></li>
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Snacks & Munchies</a></li>
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Fruits & Vegetables</a></li>
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Cold Drinks & Juices</a></li>
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Breakfast & Instant Food</a></li>
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Bakery & Biscuits</a></li>
-                            <li><a class="dropdown-item" href="pages/shop-grid.html">Chicken, Meat & Fish</a></li>
-                        </ul>
+                        <?php if(!empty($parent_categories)): ?>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <?php foreach ($parent_categories as $parent_category): ?>
+                                    <li><a class="dropdown-item" href="/shopping/products/<?= $parent_category->category_parent; ?>"><?= $parent_category->category_parent; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
                     </div>
                     <div>
                         <ul class="navbar-nav align-items-center">
                             <li class="nav-item dropdown w-100 w-lg-auto">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                                    <li><a class="dropdown-item" href="pages/index-2.html">Home 2</a></li>
-                                    <li><a class="dropdown-item" href="pages/index-3.html">Home 3</a></li>
-                                    <li><a class="dropdown-item" href="pages/index-4.html">Home 4</a></li>
-                                    <li>
-                                        <a class="dropdown-item" href="pages/index-5.html">Home 5</a>
-                                    </li>
-                                </ul>
+                                <a class="nav-link" href="/" role="button">Home</a>
                             </li>
                             <li class="nav-item dropdown w-100 w-lg-auto">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="pages/shop-grid.html">Shop Grid - Filter</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-grid-3-column.html">Shop Grid - 3 column</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-list.html">Shop List - Filter</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-filter.html">Shop - Filter</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-fullwidth.html">Shop Wide</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-single.html">Shop Single</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-single-2.html">Shop Single v2</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-wishlist.html">Shop Wishlist</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-cart.html">Shop Cart</a></li>
-                                    <li><a class="dropdown-item" href="pages/shop-checkout.html">Shop Checkout</a></li>
-                                </ul>
+                                <a class="nav-link" href="/shopping" role="button">Shop</a>
                             </li>
                             <li class="nav-item dropdown w-100 w-lg-auto">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Stores</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="pages/store-list.html">Store List</a></li>
-                                    <li><a class="dropdown-item" href="pages/store-grid.html">Store Grid</a></li>
-                                    <li><a class="dropdown-item" href="pages/store-single.html">Store Single</a></li>
-                                </ul>
+                                <a class="nav-link" href="/stores" role="button">Stores</a>
                             </li>
                             <li class="nav-item dropdown w-100 w-lg-auto dropdown-fullwidth">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mega menu</a>
+                                <?php if(!empty($mega_menu)): ?>
                                 <div class="dropdown-menu pb-0">
                                     <div class="row p-2 p-lg-4">
+                                        <?php foreach ($mega_menu as $parent=>$mega): ?>
                                         <div class="col-lg-3 col-12 mb-4 mb-lg-0">
-                                            <h6 class="text-primary ps-3">Dairy, Bread & Eggs</h6>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Butter</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Milk Drinks</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Curd & Yogurt</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Eggs</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Buns & Bakery</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Cheese</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Condensed Milk</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Dairy Products</a>
+                                            <h6 class="text-primary ps-3"><?= $parent; ?></h6>
+                                            <?php foreach($mega as $link): ?>
+                                            <a class="dropdown-item" href="/shopping/products/<?= $link->category_name; ?>"><?= $link->category_name; ?></a>
+                                            <?php endforeach; ?>
                                         </div>
-                                        <div class="col-lg-3 col-12 mb-4 mb-lg-0">
-                                            <h6 class="text-primary ps-3">Breakfast & Instant Food</h6>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Breakfast Cereal</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Noodles, Pasta & Soup</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Frozen Veg Snacks</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Frozen Non-Veg Snacks</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Vermicelli</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Instant Mixes</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Batter</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Fruit and Juices</a>
-                                        </div>
-                                        <div class="col-lg-3 col-12 mb-4 mb-lg-0">
-                                            <h6 class="text-primary ps-3">Cold Drinks & Juices</h6>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Soft Drinks</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Fruit Juices</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Coldpress</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Water & Ice Cubes</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Soda & Mixers</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Health Drinks</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Herbal Drinks</a>
-                                            <a class="dropdown-item" href="pages/shop-grid.html">Milk Drinks</a>
-                                        </div>
+                                        <?php endforeach; ?>
                                         <div class="col-lg-3 col-12 mb-4 mb-lg-0">
                                             <div class="card border-0">
                                                 <img src="/themes/shop/assets/images/banner/menu-banner.jpg" alt="eCommerce HTML Template" class="img-fluid">
@@ -344,18 +290,19 @@ $messages = $messages->getMessages();
                                         </div>
                                     </div>
                                 </div>
+                                <?php endif; ?>
                             </li>
-                            <li class="nav-item dropdown w-100 w-lg-auto">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="pages/blog.html">Blog</a></li>
-                                    <li><a class="dropdown-item" href="pages/blog-single.html">Blog Single</a></li>
-                                    <li><a class="dropdown-item" href="pages/blog-category.html">Blog Category</a></li>
-                                    <li><a class="dropdown-item" href="pages/about.html">About us</a></li>
-                                    <li><a class="dropdown-item" href="pages/404error.html">404 Error</a></li>
-                                    <li><a class="dropdown-item" href="pages/contact.html">Contact</a></li>
-                                </ul>
-                            </li>
+<!--                            <li class="nav-item dropdown w-100 w-lg-auto">-->
+<!--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>-->
+<!--                                <ul class="dropdown-menu">-->
+<!--                                    <li><a class="dropdown-item" href="pages/blog.html">Blog</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="pages/blog-single.html">Blog Single</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="pages/blog-category.html">Blog Category</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="pages/about.html">About us</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="pages/404error.html">404 Error</a></li>-->
+<!--                                    <li><a class="dropdown-item" href="pages/contact.html">Contact</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
                             <li class="nav-item dropdown w-100 w-lg-auto">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
                                 <ul class="dropdown-menu">
@@ -430,35 +377,62 @@ $messages = $messages->getMessages();
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" novalidate="">
+                <form method="post" action="/user/register" class="needs-validation" novalidate="">
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter Your Name" required="">
+                        <input name="firstname" type="text" class="form-control" id="fullName" placeholder="Enter Your Name" required="">
                         <div class="invalid-feedback">Please enter name.</div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email address" required="">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Enter Email address" required="">
                         <div class="invalid-feedback">Please enter email.</div>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter Password" required="">
-                        <div class="invalid-feedback">Please enter password.</div>
-                        <small class="form-text">
-                            By Signup, you agree to our
-                            <a href="#!">Terms of Service</a>
-                            &
-                            <a href="#!">Privacy Policy</a>
-                        </small>
+                    <div class="col">
+                        <!-- input -->
+                        <label for="formSignupuname" class="form-label">User Name</label>
+                        <input name="username" type="text" class="form-control" id="formSignupuname" placeholder="User Name" required="">
+                        <div class="invalid-feedback">Please enter username.</div>
                     </div>
+                    <div class="col mt-2 mb-2">
+                        <!-- input -->
+                        <label for="formSignuploname" class="form-label">Profile Image</label>
+                        <input name="image" type="file" class="form-control" id="formSignuploname" placeholder="Profile Image" required="">
+                        <div class="invalid-feedback">Please enter profile image.</div>
+                    </div>
+                    <div class="col">
+                        <!-- input -->
+                        <label for="formSignuprole" class="form-label">Role</label>
+                        <select name="role" id="formSignuprole" class="form-control">
+                            <option value="authenticated" selected>Authenticated</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <div class="password-field position-relative">
+                            <label for="formSignupPassword" class="form-label">Password</label>
+                            <div class="password-field position-relative">
+                                <input name="password" type="password" class="form-control fakePassword" id="formSignupPassword" placeholder="*****" required="">
+                                <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                <div class="invalid-feedback">Please enter password.</div>
+                            </div>
+                        </div>
+                        <div class="password-field position-relative mt-2">
+                            <label for="formSignupPasswordConfirm" class="form-label">Confirm Password</label>
+                            <div class="password-field position-relative">
+                                <input name="confirm" type="password" class="form-control fakePassword" id="formSignupPasswordConfirm" placeholder="*****" required="">
+                                <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                <div class="invalid-feedback">Please enter confirm password.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- btn -->
+                    <div class="col-12 d-grid mt-3"><input value="Register" name="user" type="submit" class="btn btn-primary"></div>
 
-                    <button type="submit" class="btn btn-primary" type="submit">Sign Up</button>
                 </form>
             </div>
             <div class="modal-footer border-0 justify-content-center">
                 Already have an account?
-                <a href="#">Sign in</a>
+                <a href="/user/login">Sign in</a>
             </div>
         </div>
     </div>
@@ -800,4 +774,4 @@ $messages = $messages->getMessages();
     </div>
 </div>
 
-<script src="/theme/shop/assets/js/vendors/validation.js"></script>
+<script src="/themes/shop/assets/js/vendors/validation.js"></script>

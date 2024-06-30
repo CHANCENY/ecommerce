@@ -4,7 +4,8 @@
     "options": {
       "unauthorized_access": true,
       "methods": [
-        "GET"
+        "GET",
+        "POST"
       ],
       "roles": [
         "administrator",
@@ -14,6 +15,24 @@
     "name": "Orders",
     "description": "This is orders page",
     "url": "/shop/orders",
+    "handler": "Mini\\Modules\\contrib\\order\\src\\Routes\\Orders"
+  },
+  {
+    "id": "a7322f9d-56b520b7-42976j-099580-588765-43454-987655-7654",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Order",
+    "description": "This is orders page",
+    "url": "/shop/orders/{common_id}",
     "handler": "Mini\\Modules\\contrib\\order\\src\\Routes\\Orders"
   }
 ]

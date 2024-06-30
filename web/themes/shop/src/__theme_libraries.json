@@ -6,7 +6,8 @@
     "/themes/shop/assets/libs/bootstrap-icons/font/bootstrap-icons.min.css",
     "/themes/shop/assets/libs/feather-webfont/dist/feather-icons.css",
     "/themes/shop/assets/libs/simplebar/dist/simplebar.min.css",
-    "/themes/shop/assets/css/theme.min.css"
+    "/themes/shop/assets/css/theme.min.css",
+    "  <link rel=\"stylesheet\" href=\"https://unpkg.com/aos@next/dist/aos.css\" />|ext-lib"
   ],
   "footer": [
     "/themes/shop/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
@@ -18,6 +19,7 @@
     "/themes/shop/assets/js/vendors/slick-slider.js",
     "/themes/shop/assets/libs/tiny-slider/dist/min/tiny-slider.js",
     "/themes/shop/assets/js/vendors/tns-slider.js",
-    "/themes/shop/assets/js/vendors/zoom.js"
+    "/themes/shop/assets/js/vendors/zoom.js",
+    "<script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>\n  <script>\n    AOS.init();\n  </script>|ext-lib"
   ]
 }

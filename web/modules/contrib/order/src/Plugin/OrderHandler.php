@@ -2,14 +2,19 @@
 
 namespace Mini\Modules\contrib\order\src\Plugin;
 
+use Mini\Cms\Connections\Database\Database;
 use Mini\Cms\Connections\Smtp\MailManager;
 use Mini\Cms\Connections\Smtp\Receiver;
 use Mini\Cms\Entities\User;
+use Mini\Cms\Modules\Modal\MissingDefaultValueForUnNullableColumn;
 use Mini\Cms\Modules\Modal\RecordCollection;
 use Mini\Modules\contrib\order\src\Modal\OrderItemModal;
 use Mini\Modules\contrib\order\src\Modal\OrderModal;
+use Mini\Modules\contrib\order\src\Modal\OrderStatusEmailModal;
 use Mini\Modules\contrib\products\src\Modal\ProductModal;
 use Mini\Modules\contrib\sellers\src\Modals\Vendor;
+use Mini\Modules\contrib\sellers\src\Modals\VendorLicense;
+use Mini\Modules\contrib\sellers\src\Plugin\PartnerShip;
 
 /**
  * @class OrderHandler for handling order for sellers.
@@ -142,6 +147,158 @@ class OrderHandler
             }
         }
 
+        return false;
+    }
+
+    /**
+     * Getting orders from orders storage.
+     * @param int $current_uid
+     * @return array
+     */
+    public function getOrders(int $current_uid): array
+    {
+        // If is pattern which means we will use vendor ids to get orders if not the use current user id
+        if(PartnerShip::isPartner($current_uid))
+        {
+            $vendors_modal = new Vendor();
+            $vendors = $vendors_modal->get($current_uid, 'vendor_owner')->getRecords();
+            $orders = [];
+            foreach ($vendors as $vendor) {
+                $order_on_vendor = $this->orderModal->get($vendor->vendor_id,'vendor_id')->getRecords();
+                $orders = array_merge($orders, $order_on_vendor);
+            }
+            return $orders;
+        }
+
+        return $this->orderModal->get($current_uid, 'order_by')->getRecords();
+    }
+
+    /**
+     * Updating order status
+     * @param mixed $orders array of arrays with each array with key order_id and status (int)
+     * @return bool
+     * @throws MissingDefaultValueForUnNullableColumn
+     */
+    public function updateOrderStatus(mixed $orders): bool
+    {
+        $flag = [];
+        if(is_array($orders)) {
+            foreach ($orders as $order) {
+                if($this->orderModal->update(['order_status'=>$order['status']],$order['order_id'])) {
+                    $this->queueStatusMail($order['order_id'], $order['status']);
+                    $flag[] = true;
+                }
+
+            }
+        }
+        return in_array(true, $flag);
+    }
+
+    /**
+     * Adding email of order status to queue.
+     * @param mixed $order_id
+     * @param mixed $status
+     * @return void
+     * @throws MissingDefaultValueForUnNullableColumn
+     */
+    public function queueStatusMail(mixed $order_id, mixed $status): void
+    {
+        if(!empty($order_id) && !empty($status)) {
+
+            $common_id = $this->orderModal->get($order_id)->getAt(0)?->common_id;
+            $order_by = $this->orderModal->get($order_id)->getAt(0)?->order_by;
+            $created_at = $this->orderModal->get($order_id)->getAt(0)?->customer_orders_created;
+            $user = User::load($order_by);
+            if($common_id && !empty($user->getEmail())) {
+                $mail = [];
+                switch((int)$status) {
+
+                    case 1:
+                        $mail['mail_subject'] = "Order Confirmation #".$common_id;
+                        $mail['mail_body'] = "<p>Hello {$user->getFirstname()},<br>The order you placed on {$created_at} has been confirmed by our seller.<br>This email is confirmation that order #$common_id is ready for shipping to your address<br>
+                                              <br>Thank you.";
+                        $mail['attachment'] = null;
+                        $mail['mail_to'] = $user->getUid();
+                        break;
+                    case 2:
+                        $mail['mail_subject'] = "Shipping #".$common_id;
+                        $mail['mail_body'] = "<p>Hello {$user->getFirstname()},<br>The order you placed on {$created_at} has been dispatched by our seller.<br>This email is confirmation of dispatchement of the order #$common_id to your address<br>
+                                              <br>Thank you.";
+                        $mail['attachment'] = null;
+                        $mail['mail_to'] = $user->getUid();
+                        break;
+                    case 3:
+                        $mail['mail_subject'] = "Delivered #".$common_id;
+                        $mail['mail_body'] = "<p>Hello {$user->getFirstname()},<br>The order #{$common_id} has been delivered by our delivery partner.<br>This email is confirmation that order #$common_id has been delivered successfully.<br>
+                                              <br>Thank you.";
+                        $mail['attachment'] = null;
+                        $mail['mail_to'] = $user->getUid();
+                        break;
+                    case 4:
+                        $mail['mail_subject'] = "Order Cancelled #".$common_id;
+                        $mail['mail_body'] = "<p>Hello {$user->getFirstname()},<br>The order you placed on {$created_at} has been cancelled by our seller.<br>This email is confirmation that order #$common_id has been cancelled and we apologise for incovenience this may have caused.<br>
+                                              <br>Thank you.";
+                        $mail['attachment'] = null;
+                        $mail['mail_to'] = $user->getUid();
+                        break;
+            }
+
+               if(!empty($mail)) {
+                   $mail_order_modal = new OrderStatusEmailModal();
+                   $mail_order_modal->store($mail);
+               }
+            }
+        }
+    }
+
+    /**
+     * Get order
+     * @param string $common_id
+     * @return array
+     */
+    public function getOrder(string $common_id): array
+    {
+        $order = $this->orderModal->get($common_id, 'common_id')->getAt(0);
+        if($order) {
+            $items = $this->orderItemModal->get($common_id, 'common_id')->getRecords();
+            return array(
+                'order' => $order,
+                'items' => $items
+            );
+        }
+        return [];
+    }
+
+    /**
+     * Getting customer address.
+     * @param int $address_field_id
+     * @return array|bool
+     */
+    public static function shippingAddress(int $address_field_id): array|bool
+    {
+        $query = Database::database()->prepare('SELECT * FROM address_fields_data WHERE lid = :id');
+        $query->execute(['id'=>$address_field_id]);
+        return $query->fetch();
+    }
+
+    /**
+     * Set or update order note.
+     * @param string $common_id
+     * @param string $note
+     * @return bool
+     */
+    public function addOrderNote(string $common_id, string $note): bool
+    {
+        if(is_numeric($common_id) && $note) {
+            $order = $this->orderModal->get($common_id, 'common_id')->getAt(0);
+            if($order &&  $this->orderModal->update(['order_note'=>$note],$common_id)) {
+                $user = User::load($order->order_by);
+                $receiver = new Receiver([['name'=>$user->getFirstname(), 'mail'=>$user->getEmail()]]);
+                MailManager::mail($receiver)
+                    ->send(['subject'=>'Note for order #'.$common_id, 'body'=>$note]);
+                return true;
+            }
+        }
         return false;
     }
 }

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-098433-3467833",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Reviews",
+    "description": "This is shop dashboard",
+    "url": "/shop/reviews",
+    "handler": "Mini\\Modules\\contrib\\reviews\\src\\Routes\\Reviews"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b7-42991-098433-34678330987",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Review",
+    "description": "This is shop dashboard",
+    "url": "/shop/review/{review_id}",
+    "handler": "Mini\\Modules\\contrib\\reviews\\src\\Routes\\Reviews"
+  }
+]

@@ -1,0 +1,24 @@
+<?php
+
+
+use Mini\Modules\contrib\front\src\Plugin\ProductsAccess;
+use Mini\Modules\contrib\products\src\Modal\ProductImageModal;
+
+function front_view_data_alter(array &$variables, string $view_file): void
+{
+    if ($view_file === 'home_page.php') {
+        $product_access = new ProductsAccess();
+        $popular_products = $product_access->getPopularProducts();
+
+        // Let's add data or view here
+        $variables['content']['popular'] = $popular_products;
+        $variables['content']['product_image_modal'] = new ProductImageModal();
+        $variables['content']['best_sells'] = $product_access->getTodayBestSells();
+        $variables['content']['categories'] = $product_access->getCategories();
+    }
+    if($view_file === 'navigation.php') {
+        $product_access = new ProductsAccess();
+        $variables['parent_categories'] = $product_access->getParentCategories();
+        $variables['mega_menu'] = $product_access->getMegaMenu();
+    }
+}

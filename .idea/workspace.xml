@@ -5,19 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94f10dfb-8858-44c2-a819-3faaa754f477" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/route.import.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderItemModal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderModal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Plugin/OrderHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Routes/Orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/dashboard_orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Modules/Cron/Cron.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Modules/Cron/CronInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Modules/Cron/CronModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/bin/cron.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/bin/cron_runner.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/customers/src/Plugin/Customers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/src/Routes/Customers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/front/front.module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/front/route.import.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/front/src/Plugin/ProductsAccess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/front/src/Routes/Stores.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderStatusEmailModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Plugin/OrderCron.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/reviews/route.import.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/reviews/src/Modal/ReviewModal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/reviews/src/Plugin/Reviews.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/modules/contrib/reviews/src/Routes/Reviews.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/customers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/dashboard_order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/review_single.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/reviews.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/themes/shop/src/pages/stores_front.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Modules/FileSystem/FileSystem.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Modules/FileSystem/FileSystem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Theme/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Theme/Theme.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controllers/Sample.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/Sample.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/dashboard.module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/dashboard/route.import.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/order/route.import.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/order/route.import.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Modal/OrderModal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/order/src/Plugin/OrderHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Plugin/OrderHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/order/src/Routes/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/order/src/Routes/Orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Modal/ProductModal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/products/src/Plugin/Products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/modules/contrib/sellers/src/Modals/Vendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/sellers/src/Modals/Vendor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/sellers/sellers.module" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/sellers/sellers.module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/__theme_libraries.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/__theme_libraries.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/dashboard/dashboard_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/dashboard/dashboard_orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/dashboard_navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/layouts/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/layouts/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/themes/shop/src/pages/home_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/themes/shop/src/pages/home_page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +61,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpTemplates">
+    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="module" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
@@ -138,6 +166,13 @@
       <workItem from="1719496804208" duration="2116000" />
       <workItem from="1719503046978" duration="9781000" />
       <workItem from="1719545435623" duration="1202000" />
+      <workItem from="1719641649426" duration="13347000" />
+      <workItem from="1719667157609" duration="16857000" />
+      <workItem from="1719696793847" duration="623000" />
+      <workItem from="1719718246473" duration="8901000" />
+      <workItem from="1719729860072" duration="9838000" />
+      <workItem from="1719751475446" duration="6076000" />
+      <workItem from="1719762034322" duration="5254000" />
     </task>
     <servers />
   </component>

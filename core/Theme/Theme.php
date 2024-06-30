@@ -100,6 +100,7 @@ class Theme
             'current_request' => Request::createFromGlobals(),
             'site' => new Site(),
         ];
+        Extensions::runHooks('_view_data_alter', [&$variables, $file_name]);
         if(!empty($view_file[0]) && file_exists($view_file[0])) {
             ob_start();
             extract($variables);

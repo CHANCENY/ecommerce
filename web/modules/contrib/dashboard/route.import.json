@@ -86,5 +86,22 @@
     "description": "This is product form",
     "url": "/shop/products/{new_product}",
     "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Products"
+  },
+  {
+    "id": "a7322f9d-3dd0-54653223-7705040-454-958547-9484765",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Customers",
+    "description": "This is shop customers",
+    "url": "/shop/customers",
+    "handler": "Mini\\Modules\\contrib\\dashboard\\src\\Routes\\Customers"
   }
 ]
